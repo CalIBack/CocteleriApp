@@ -1,5 +1,7 @@
 # CocktailApp 🍹
 
+LINK: https://youtube.com/shorts/MlvVwwua0Dw?feature=share
+
 Aplicación Android desarrollada en **Kotlin** que permite explorar un catálogo de cócteles y bebidas, consumiendo la API pública y gratuita **[TheCocktailDB](https://www.thecocktaildb.com/api.php)**.
 
 ## Funcionalidades
