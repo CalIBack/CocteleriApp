@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="amber_primary">#C68E17</color>
+    <color name="amber_primary_dark">#8C6511</color>
+    <color name="wine_secondary">#7B241C</color>
+    <color name="cream_background">#FFF8E7</color>
+    <color name="text_dark">#2B1B0E</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+</resources>
