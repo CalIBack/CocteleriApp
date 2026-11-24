@@ -1,40 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="16dp">
 
-    <LinearLayout
+    <!--
+    [Bato] Buscador con TextInputLayout de Material.
+      Antes: un EditText común con fondo blanco plano.
+      Por qué: trae lupa, bordes redondeados, el hint que sube al escribir,
+      y una cruz para borrar (endIconMode="clear_text").
+    -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutSearch"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="12dp">
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_search"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:endIconMode="clear_text"
+        app:startIconDrawable="@drawable/ic_search">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Buscar cóctel (ej: margarita)"
             android:imeOptions="actionSearch"
             android:inputType="text"
-            android:padding="12dp"
-            android:background="@color/white"
-            android:textColor="@color/text_dark"
-            android:textColorHint="#88000000" />
+            android:maxLines="1" />
 
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--
+    [Bato] Filtro por ingrediente.
+      Antes: no existía.
+      Diferencia con Bato: él usaba un Spinner. Este es un menú desplegable de Material
+      (ExposedDropdownMenu) en el que también se puede escribir para filtrar la lista.
+    -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutIngredient"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/hint_ingredient"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp">
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/dropdownIngredient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:completionThreshold="1"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- [Mejora] Título de los resultados, por ejemplo "Resultados para «margarita» · 6 cócteles". -->
+    <TextView
+        android:id="@+id/textResultsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textAppearance="?attr/textAppearanceTitleSmall"
+        android:textColor="@color/wine_secondary"
+        android:visibility="gone"
+        tools:text="Resultados para «margarita» · 6 cócteles"
+        tools:visibility="visible" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1">
+
+        <!-- El LayoutManager se declara acá en vez de en el código. -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerDrinks"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginTop="8dp" />
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/drink_item" />
 
-    </LinearLayout>
+        <!-- [Mejora] Indicador de carga de Material 3 en vez del ProgressBar clásico. -->
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progressList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:indicatorColor="@color/amber_primary" />
 
-    <ProgressBar
-        android:id="@+id/progressBarList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:visibility="gone" />
+        <include
+            android:id="@+id/message"
+            layout="@layout/view_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
 
-</FrameLayout>
+    </FrameLayout>
+
+</LinearLayout>

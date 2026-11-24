@@ -1,8 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.CocktailApp" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.CocktailApp" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/amber_primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/amber_container</item>
+        <item name="colorOnPrimaryContainer">@color/text_dark</item>
+        <item name="colorSecondary">@color/wine_secondary</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/wine_container</item>
+        <item name="colorOnSecondaryContainer">@color/text_dark</item>
+        <item name="colorSurface">@color/cream_background</item>
+        <item name="colorOnSurface">@color/text_dark</item>
+        <item name="colorOnSurfaceVariant">@color/text_muted</item>
+        <item name="colorOutline">@color/amber_primary</item>
+        <item name="android:colorBackground">@color/cream_background</item>
+        <item name="android:windowBackground">@color/cream_background</item>
     </style>
 
     <style name="Theme.CocktailApp" parent="Base.Theme.CocktailApp" />

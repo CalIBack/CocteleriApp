@@ -7,4 +7,9 @@
     <color name="text_dark">#2B1B0E</color>
     <color name="white">#FFFFFFFF</color>
     <color name="black">#FF000000</color>
+
+    <color name="amber_container">#FCEBC4</color>
+    <color name="wine_container">#F9DCD7</color>
+    <color name="text_muted">#6B5B4B</color>
+    <color name="outline_soft">#E6D8BF</color>
 </resources>

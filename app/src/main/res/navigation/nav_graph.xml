@@ -3,25 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/drinkListFragment">
+    app:startDestination="@id/fragmentLista">
 
     <fragment
-        android:id="@+id/drinkListFragment"
-        android:name="com.example.cocktailapp.DrinkListFragment"
-        android:label="Cócteles"
-        tools:layout="@layout/fragment_drink_list">
+        android:id="@+id/fragmentLista"
+        android:name="com.example.cocktailapp.ui.lista.ListaFragment"
+        android:label="@string/titulo_lista"
+        tools:layout="@layout/fragment_lista">
         <action
-            android:id="@+id/action_drinkList_to_drinkDetail"
-            app:destination="@id/drinkDetailFragment" />
+            android:id="@+id/accion_lista_a_detalle"
+            app:destination="@id/fragmentDetalle" />
     </fragment>
 
     <fragment
-        android:id="@+id/drinkDetailFragment"
-        android:name="com.example.cocktailapp.DrinkDetailFragment"
-        android:label="Detalle"
-        tools:layout="@layout/fragment_drink_detail">
+        android:id="@+id/fragmentDetalle"
+        android:name="com.example.cocktailapp.ui.detalle.DetalleFragment"
+        android:label="@string/titulo_detalle"
+        tools:layout="@layout/fragment_detalle">
         <argument
-            android:name="drinkId"
+            android:name="idCoctel"
             app:argType="string" />
     </fragment>
 

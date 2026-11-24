@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">CocktailApp</string>
+
+    <string name="titulo_lista">Cócteles</string>
+    <string name="titulo_detalle">Detalle</string>
+
+    <string name="pista_busqueda">Buscar cóctel (ej: margarita)</string>
+    <string name="pista_ingrediente">Filtrar por ingrediente</string>
+
+    <string name="resultados_por_nombre">Resultados para «%1$s»</string>
+    <string name="resultados_por_ingrediente">Cócteles con %1$s</string>
+    <plurals name="cantidad_cocteles">
+        <item quantity="one">%d cóctel</item>
+        <item quantity="many">%d cócteles</item>
+        <item quantity="other">%d cócteles</item>
+    </plurals>
+
+    <string name="sin_resultados_nombre">No encontramos cócteles para «%1$s». Probá con otro nombre.</string>
+    <string name="sin_resultados_ingrediente">No hay cócteles con %1$s.</string>
+
+    <string name="error_sin_conexion">No hay conexión a internet. Revisá tu red y volvé a intentar.</string>
+    <string name="error_servidor">El servidor respondió con un error (%1$d). Probá de nuevo en un rato.</string>
+    <string name="error_respuesta">La respuesta del servidor no tiene el formato esperado.</string>
+    <string name="error_inesperado">Ocurrió un error inesperado.</string>
+    <string name="error_sin_id">No se pudo abrir el cóctel.</string>
+    <string name="error_no_encontrado">No encontramos este cóctel.</string>
+    <string name="reintentar">Reintentar</string>
+
+    <string name="seccion_ingredientes">Ingredientes</string>
+    <string name="seccion_preparacion">Preparación</string>
+    <string name="sin_instrucciones">Sin instrucciones.</string>
+
+    <string name="desc_foto_coctel">Foto del cóctel</string>
+    <string name="desc_miniatura_coctel">Miniatura del cóctel</string>
 </resources>
